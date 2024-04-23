@@ -27,7 +27,7 @@ class Vehiculo:
         return f"Marca: {self.__marca}, Modelo: {self.__modelo}, Año: {self.__ano}"
 
 # Creación de un objeto de la clase Vehiculo
-mi_vehiculo = Vehiculo("Ford", "Mustang", 2018, 2020)
+mi_vehiculo = Vehiculo("Ford", "Mustang", 2018)
 mi_vehiculo.establecer_marca("Honda")
 mi_vehiculo.establecer_modelo("Civic")
 mi_vehiculo.establecer_ano(2022)
@@ -64,25 +64,25 @@ print("La suma de todos los números primos menores o iguales a 30 es:", suma_pr
 import requests
 
 # URL base de la API
-base_url = "https://jsonplaceholder.typicode.com"
+url = "https://jsonplaceholder.typicode.com"
 
 # Obtener usuarios (GET)
-respuesta = requests.get(f"{base_url}/users")
+respuesta = requests.get(f"{url}/users")
 usuarios = respuesta.json()
 print("Usuarios obtenidos.")
 
 # Elegir un usuario y actualizar su nombre (PATCH)
 id_usuario = usuarios[0]['id']  # Elegir el primer usuario
-respuesta = requests.patch(f"{base_url}/users/{id_usuario}", data={"name": "Nuevo nombre"})
+respuesta = requests.patch(f"{url}/users/{id_usuario}", data={"name": "Nuevo nombre"})
 print("Nombre de usuario actualizado.")
 
 # Crear un nuevo post 
-respuesta = requests.post(f"{base_url}/posts", data={"userId": id_usuario, "title": "Nuevo post", "body": "Contenido del nuevo post"})
+respuesta = requests.post(f"{url}/posts", data={"userId": id_usuario, "title": "Nuevo post", "body": "Contenido del nuevo post"})
 nuevo_post = respuesta.json()
 print("Nuevo post creado.")
 
 # Eliminar el post creado 
-respuesta = requests.delete(f"{base_url}/posts/{nuevo_post['id']}")
+respuesta = requests.delete(f"{url}/posts/{nuevo_post['id']}")
 if respuesta.status_code == 200:
     print("Post eliminado correctamente.")
 else:
