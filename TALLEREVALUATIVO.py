@@ -1,6 +1,6 @@
 #PUNTO 1 PROGRAMACIÓN ORIENTADA A OBJETOS
 #Año es lo mismo que ano , problema con la ñ
-# Definición de la clase Vehiculo
+# Definición de la clase Vehicul
 class Vehiculo:
     def __init__(self, marca, modelo, ano):
         self.__marca = marca
@@ -64,7 +64,7 @@ print("La suma de todos los números primos menores o iguales a 30 es:", suma_pr
 import requests
 
 # URL base de la API
-url = "https://jsonplaceholder.typicode.com"
+url = "https://jsonplaceholder.typicode.com/"
 
 # Obtener usuarios (GET)
 respuesta = requests.get(f"{url}/users")
